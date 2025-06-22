@@ -1,0 +1,249 @@
+/* Main Styles for Anniversary Website */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Font Classes */
+.font-script { font-family: 'Dancing Script', cursive; }
+.font-inter { font-family: 'Inter', sans-serif; }
+
+/* Background Styles */
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Card Hover Effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+/* Floating Animation */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Photo Placeholder Styles */
+.photo-placeholder {
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    position: relative;
+    overflow: hidden;
+}
+
+.photo-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+/* Heart Animation */
+.love-heart {
+    color: #e91e63;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+/* Card Flip Animation */
+.reveal-card {
+    perspective: 1000px;
+}
+
+.card-flip {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-flip.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+/* Floating Hearts Animation */
+@keyframes float-up {
+    to {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Telugu Text Styling */
+.telugu-text {
+    font-family: 'Noto Sans Telugu', sans-serif;
+    line-height: 1.6;
+}
+
+/* Anniversary Animation Styles */
+.anniversary-animation-container {
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.ring-animation {
+    transition: all 0.5s ease;
+}
+
+.milestone-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.milestone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Mobile Responsive Improvements */
+@media (max-width: 768px) {
+    /* General mobile adjustments */
+    section {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    
+    h2 {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Anniversary animation container */
+    .anniversary-animation-container {
+        height: 250px !important;
+    }
+    
+    /* Milestone cards */
+    .milestone-card {
+        padding: 0.75rem;
+    }
+    
+    .milestone-card .text-3xl {
+        font-size: 1.5rem;
+    }
+    
+    /* Countdown adjustments */
+    .countdown-container {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        padding: 0.5rem;
+    }
+    
+    /* Animation elements */
+    .ring-animation {
+        border-width: 2px;
+    }
+    
+    /* Timeline adjustments */
+    .timeline-item {
+        margin-bottom: 1.5rem;
+    }
+    
+    /* Card adjustments */
+    .reveal-card {
+        height: 100px;
+    }
+    
+    /* Quote section adjustments */
+    #quotes-section .quote {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Small mobile adjustments */
+@media (max-width: 480px) {
+    .font-script.text-4xl {
+        font-size: 1.75rem;
+    }
+    
+    .milestone-card h4 {
+        font-size: 0.875rem;
+    }
+    
+    .countdown-item .text-3xl {
+        font-size: 1.5rem;
+    }
+}
+
+/* Countdown Timer */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.countdown-value {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #764ba2;
+}
+
+.countdown-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Scroll Animation */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .countdown-container {
+        gap: 10px;
+    }
+    
+    .countdown-value {
+        font-size: 1.8rem;
+    }
+    
+    .countdown-label {
+        font-size: 0.7rem;
+    }
+}
