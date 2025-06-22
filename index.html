@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Anniversary My Love</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .font-script { font-family: 'Dancing Script', cursive; }
+        .font-inter { font-family: 'Inter', sans-serif; }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+        
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .photo-placeholder {
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .photo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .love-heart {
+            color: #e91e63;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .reveal-card {
+            perspective: 1000px;
+        }
+        
+        .card-flip {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .card-flip.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="font-inter bg-gray-50 overflow-x-hidden">
+    
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center relative">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        <div class="container mx-auto px-4 relative z-10 text-center text-white">
+            <div class="floating">
+                <i class="fas fa-heart love-heart text-6xl mb-8"></i>
+            </div>
+            <h1 class="font-script text-6xl md:text-8xl mb-4 opacity-0" id="title">Happy Anniversary</h1>
+            <p class="text-xl md:text-2xl font-light mb-8 opacity-0" id="subtitle">Celebrating Our Beautiful Journey Together</p>
+            
+            <!-- Photo Section -->
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 mb-12">
+                <div class="photo-placeholder w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-white shadow-2xl opacity-0" id="photo1">
+                    <div class="w-full h-full rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-4xl text-gray-400"></i>
+                    </div>
+                </div>
+                <div class="text-4xl md:text-6xl opacity-0" id="plus">
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="photo-placeholder w-32 h-32 md:w-48 md:h-48 rounded-full border-4 border-white shadow-2xl opacity-0" id="photo2">
+                    <div class="w-full h-full rounded-full flex items-center justify-center">
+                        <i class="fas fa-user text-4xl text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <button onclick="scrollToNext()" class="bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-opacity-90 transition-all duration-300 opacity-0" id="exploreBtn">
+                <i class="fas fa-heart mr-2"></i>
+                Explore Our Love Story
+            </button>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+            <i class="fas fa-chevron-down text-2xl"></i>
+        </div>
+    </section>
+
+    <!-- Love Timeline -->
+    <section class="py-20 bg-white" id="timeline">
+        <div class="container mx-auto px-4">
+            <h2 class="font-script text-5xl md:text-6xl text-center text-gray-800 mb-16">
+                <i class="fas fa-clock text-purple-500 mr-4"></i>
+                Our Love Timeline
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-12">
+                    <div class="timeline-item opacity-0 transform translate-y-10">
+                        <div class="bg-gradient-to-r from-pink-100 to-purple-100 p-8 rounded-2xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-heart text-pink-500 text-2xl mr-4"></i>
+                                <h3 class="text-2xl font-semibold text-gray-800">First Meeting</h3>
+                            </div>
+                            <p class="text-gray-600 text-lg leading-relaxed">The moment our eyes met, I knew you were special. That coffee shop conversation that lasted for hours was just the beginning of our beautiful story.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item opacity-0 transform translate-y-10">
+                        <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-8 rounded-2xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-ring text-indigo-500 text-2xl mr-4"></i>
+                                <h3 class="text-2xl font-semibold text-gray-800">The Proposal</h3>
+                            </div>
+                            <p class="text-gray-600 text-lg leading-relaxed">Under the starlit sky, I asked you to be mine forever. Your 'yes' was the most beautiful sound I've ever heard, and it still echoes in my heart.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item opacity-0 transform translate-y-10">
+                        <div class="bg-gradient-to-r from-green-100 to-teal-100 p-8 rounded-2xl card-hover">
+                            <div class="flex items-center mb-4">
+                                <i class="fas fa-church text-teal-500 text-2xl mr-4"></i>
+                                <h3 class="text-2xl font-semibold text-gray-800">Wedding Day</h3>
+                            </div>
+                            <p class="text-gray-600 text-lg leading-relaxed">The day we became one. Walking down that aisle towards you was like walking towards my destiny. Every moment was perfect because you were there.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reasons Gallery -->
+    <section class="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div class="container mx-auto px-4">
+            <h2 class="font-script text-5xl md:text-6xl text-center text-gray-800 mb-4">
+                <i class="fas fa-star text-yellow-500 mr-4"></i>
+                Why I Love You
+            </h2>
+            <p class="text-center text-gray-600 mb-16 text-lg">Click each card to reveal a reason</p>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <div class="reveal-card h-32" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-pink-400 to-purple-500 rounded-xl flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-heart text-white text-3xl"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-pink-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">Your beautiful smile lights up my world</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-32" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-laugh text-white text-3xl"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-blue-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">You make me laugh even on my worst days</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-32" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-green-400 to-teal-500 rounded-xl flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-home text-white text-3xl"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-green-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">You make every house feel like home</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-32" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-sun text-white text-3xl"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-yellow-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">You're my sunshine on cloudy days</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-32" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-red-400 to-pink-500 rounded-xl flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-puzzle-piece text-white text-3xl"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-red-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">You complete me in every way</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-32" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-star text-white text-3xl"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-indigo-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">You believe in my dreams</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-32" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-teal-400 to-blue-500 rounded-xl flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-hands-helping text-white text-3xl"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-teal-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">Your kindness inspires me daily</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-32" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center cursor-pointer">
+                            <i class="fas fa-infinity text-white text-3xl"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-purple-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">My love for you is infinite</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Love Letter Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-purple-100 to-pink-100 rounded-3xl p-8 md:p-12 shadow-2xl">
+                    <div class="text-center mb-8">
+                        <i class="fas fa-envelope-heart text-purple-500 text-5xl mb-4"></i>
+                        <h2 class="font-script text-5xl md:text-6xl text-gray-800">A Letter to My Love</h2>
+                    </div>
+                    
+                    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
+                        <p class="text-xl mb-6 font-script">My Dearest Wife,</p>
+                        
+                        <p class="mb-6">Every morning I wake up next to you, I'm reminded of how blessed I am. You are not just my wife, you are my best friend, my confidant, my partner in all of life's adventures, and the love of my life.</p>
+                        
+                        <p class="mb-6">Through all the seasons of our marriage, you have been my constant. In joy, you celebrate with me. In sorrow, you comfort me. In uncertainty, you believe in us. Your love has been the foundation upon which we've built this beautiful life together.</p>
+                        
+                        <p class="mb-6">Thank you for choosing to love me every single day. Thank you for your patience, your grace, your laughter, and your unwavering support. Thank you for making our house a home and for being the most incredible mother to our family.</p>
+                        
+                        <p class="mb-6">As we celebrate another year of marriage, I want you to know that my love for you has only grown stronger. You are more beautiful to me today than the day I first met you, and I fall in love with you all over again with each passing day.</p>
+                        
+                        <p class="mb-6 font-script text-xl">Here's to many more years of laughter, adventures, quiet moments, and endless love.</p>
+                        
+                        <p class="text-xl font-script">Forever yours,<br>Your Loving Husband</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <i class="fas fa-heart love-heart text-4xl"></i>
+            </div>
+            <h3 class="font-script text-3xl mb-4">Happy Anniversary, My Love</h3>
+            <p class="text-lg opacity-90">Here's to forever and always</p>
+            <div class="mt-8 flex justify-center space-x-6">
+                <i class="fas fa-heart text-2xl opacity-75"></i>
+                <i class="fas fa-ring text-2xl opacity-75"></i>
+                <i class="fas fa-heart text-2xl opacity-75"></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Hero animations
+            gsap.timeline()
+                .to("#title", {duration: 1, opacity: 1, y: 0, ease: "power2.out"})
+                .to("#subtitle", {duration: 1, opacity: 1, y: 0, ease: "power2.out"}, "-=0.5")
+                .to("#photo1", {duration: 1, opacity: 1, scale: 1, ease: "back.out(1.7)"}, "-=0.5")
+                .to("#plus", {duration: 0.5, opacity: 1, scale: 1, ease: "power2.out"}, "-=0.3")
+                .to("#photo2", {duration: 1, opacity: 1, scale: 1, ease: "back.out(1.7)"}, "-=0.7")
+                .to("#exploreBtn", {duration: 0.8, opacity: 1, y: 0, ease: "power2.out"}, "-=0.3");
+
+            // Timeline animations on scroll
+            gsap.registerPlugin(ScrollTrigger);
+            
+            gsap.utils.toArray('.timeline-item').forEach((item, i) => {
+                gsap.to(item, {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: item,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none reverse"
+                    }
+                });
+            });
+        });
+
+        function scrollToNext() {
+            document.getElementById('timeline').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        function flipCard(card) {
+            const cardFlip = card.querySelector('.card-flip');
+            cardFlip.classList.toggle('flipped');
+        }
+
+        // Add some interactive floating hearts
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '<i class="fas fa-heart"></i>';
+            heart.className = 'fixed text-pink-400 text-sm pointer-events-none z-50';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.top = '100vh';
+            heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            heart.style.animation = 'float-up linear forwards';
+            
+            document.body.appendChild(heart);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+
+        // Add floating hearts every few seconds
+        setInterval(createFloatingHeart, 3000);
+
+        // Add CSS for floating hearts
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float-up {
+                to {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/1.0.6/ScrollTrigger.min.js"></script>
+</body>
+</html>
