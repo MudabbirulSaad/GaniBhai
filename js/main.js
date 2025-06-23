@@ -56,6 +56,45 @@ function initAnimations() {
         });
     });
     
+    // Photo Gallery animations
+    const galleryItems = gsap.utils.toArray('.gallery-item');
+    
+    // Create a staggered entrance for gallery items
+    gsap.from(galleryItems, {
+        opacity: 0,
+        y: 30,
+        scale: 0.9,
+        stagger: {
+            amount: 0.8, // Total stagger duration
+            grid: "auto",
+            from: "center"
+        },
+        duration: 0.8,
+        ease: "back.out(1.2)",
+        scrollTrigger: {
+            trigger: ".photo-gallery",
+            start: "top 80%",
+            toggleActions: "play none none none"
+        }
+    });
+    
+    // Add hover animations for gallery items
+    galleryItems.forEach(item => {
+        const image = item.querySelector('img');
+        const caption = item.querySelector('.group div:last-child');
+        
+        // Create hover animation
+        item.addEventListener('mouseenter', () => {
+            gsap.to(image, {scale: 1.05, duration: 0.3, ease: "power1.out"});
+            gsap.to(caption, {opacity: 1, y: 0, duration: 0.3});
+        });
+        
+        item.addEventListener('mouseleave', () => {
+            gsap.to(image, {scale: 1, duration: 0.3, ease: "power1.out"});
+            gsap.to(caption, {opacity: 0, y: 5, duration: 0.3});
+        });
+    });
+    
     // Quotes section animation
     gsap.from("#quotes-section .quote", {
         opacity: 0,
@@ -93,6 +132,20 @@ function initAnimations() {
         ease: "power2.out",
         scrollTrigger: {
             trigger: ".milestone-card",
+            start: "top 85%",
+            toggleActions: "play none none none"
+        }
+    });
+    
+    // Flip cards animation
+    gsap.from(".reveal-card", {
+        opacity: 0,
+        y: 20,
+        stagger: 0.1,
+        duration: 0.8,
+        ease: "back.out(1.2)",
+        scrollTrigger: {
+            trigger: ".reveal-card",
             start: "top 85%",
             toggleActions: "play none none none"
         }
@@ -323,6 +376,22 @@ function createFloatingHeart() {
     }, 5000);
 }
 
+// Image gallery modal functionality
+function openModal(imageSrc) {
+    const modal = document.getElementById('image-modal');
+    const modalImage = document.getElementById('modal-image');
+    
+    modalImage.src = imageSrc;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+}
+
+function closeModal() {
+    const modal = document.getElementById('image-modal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = ''; // Restore scrolling
+}
+
 // Initialize countdown timer
 function initCountdown() {
     // Set the anniversary date to June 24, 2025
@@ -366,25 +435,4 @@ function initScrollReveal() {
     
     window.addEventListener('scroll', checkReveal);
     checkReveal(); // Initial check
-}
-
-// Image gallery modal functionality
-function openModal(imageSrc) {
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById('modal-image');
-    
-    modalImg.src = imageSrc;
-    modal.classList.remove('hidden');
-    
-    gsap.from(modalImg, {
-        opacity: 0,
-        scale: 0.8,
-        duration: 0.5,
-        ease: "power2.out"
-    });
-}
-
-function closeModal() {
-    const modal = document.getElementById('image-modal');
-    modal.classList.add('hidden');
 }

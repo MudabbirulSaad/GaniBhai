@@ -67,32 +67,56 @@
             <div class="max-w-4xl mx-auto">
                 <div class="space-y-12">
                     <div class="timeline-item opacity-0 transform translate-y-10">
-                        <div class="bg-gradient-to-r from-pink-100 to-purple-100 p-8 rounded-2xl card-hover">
+                        <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-6 rounded-2xl card-hover">
                             <div class="flex items-center mb-4">
-                                <i class="fas fa-heart text-pink-500 text-2xl mr-4"></i>
+                                <i class="fas fa-heart text-red-500 text-2xl mr-4"></i>
                                 <h3 class="text-2xl font-semibold text-gray-800">First Meeting</h3>
                             </div>
-                            <p class="text-gray-600 text-lg leading-relaxed">The moment our eyes met, I knew you were special. That coffee shop conversation that lasted for hours was just the beginning of our beautiful story.</p>
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="md:w-1/3">
+                                    <img src="images/bhai_bhabhi_old_2.jpeg" alt="First Meeting" class="rounded-lg shadow-md w-full h-auto object-cover">
+                                    <p class="text-xs text-center mt-1 text-gray-500">A precious family moment from April 21, 2013</p>
+                                </div>
+                                <div class="md:w-2/3">
+                                    <p class="text-gray-600 text-lg leading-relaxed">The day our eyes met and our hearts connected. I knew from that moment that you were someone special. Seeking blessings together marked the beginning of our beautiful journey.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="timeline-item opacity-0 transform translate-y-10">
-                        <div class="bg-gradient-to-r from-blue-100 to-indigo-100 p-8 rounded-2xl card-hover">
+                        <div class="bg-gradient-to-r from-pink-100 to-rose-100 p-6 rounded-2xl card-hover">
                             <div class="flex items-center mb-4">
-                                <i class="fas fa-ring text-indigo-500 text-2xl mr-4"></i>
+                                <i class="fas fa-star text-yellow-500 text-2xl mr-4"></i>
                                 <h3 class="text-2xl font-semibold text-gray-800">The Proposal</h3>
                             </div>
-                            <p class="text-gray-600 text-lg leading-relaxed">Under the starlit sky, I asked you to be mine forever. Your 'yes' was the most beautiful sound I've ever heard, and it still echoes in my heart.</p>
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="md:w-1/3">
+                                    <img src="images/Bhai_bhabhi_old.jpeg" alt="The Proposal" class="rounded-lg shadow-md w-full h-auto object-cover">
+                                    <p class="text-xs text-center mt-1 text-gray-500">A moment frozen in time. So young and so happy.</p>
+                                </div>
+                                <div class="md:w-2/3">
+                                    <p class="text-gray-600 text-lg leading-relaxed">Under the starlit sky, I asked you to be mine forever. Your 'yes' was the most beautiful sound I've ever heard, and it still echoes in my heart. A beautiful memory from the beginning of our journey together.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
                     <div class="timeline-item opacity-0 transform translate-y-10">
-                        <div class="bg-gradient-to-r from-green-100 to-teal-100 p-8 rounded-2xl card-hover">
+                        <div class="bg-gradient-to-r from-green-100 to-teal-100 p-6 rounded-2xl card-hover">
                             <div class="flex items-center mb-4">
                                 <i class="fas fa-church text-teal-500 text-2xl mr-4"></i>
                                 <h3 class="text-2xl font-semibold text-gray-800">Wedding Day</h3>
                             </div>
-                            <p class="text-gray-600 text-lg leading-relaxed">The day we became one. Walking down that aisle towards you was like walking towards my destiny. Every moment was perfect because you were there.</p>
+                            <div class="flex flex-col md:flex-row gap-4">
+                                <div class="md:w-1/3">
+                                    <img src="images/family_photo_old_1.jpeg" alt="Wedding Day" class="rounded-lg shadow-md w-full h-auto object-cover">
+                                    <p class="text-xs text-center mt-1 text-gray-500">Sun, sand, and our beautiful family</p>
+                                </div>
+                                <div class="md:w-2/3">
+                                    <p class="text-gray-600 text-lg leading-relaxed">The day we became one. Walking down that aisle towards you was like walking towards my destiny. Every moment was perfect because you were there. A perfect family portrait by the sea, capturing cherished memories.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -110,10 +134,14 @@
             <p class="text-center text-gray-600 mb-16 text-lg">Click each card to reveal a reason</p>
             
             <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-                <div class="reveal-card h-32" onclick="flipCard(this)">
+                <div class="reveal-card h-40 md:h-48" onclick="flipCard(this)">
                     <div class="card-flip h-full relative">
-                        <div class="card-front bg-gradient-to-br from-pink-400 to-purple-500 rounded-xl flex items-center justify-center cursor-pointer">
-                            <i class="fas fa-heart text-white text-3xl"></i>
+                        <div class="card-front bg-gradient-to-br from-pink-400 to-purple-500 rounded-xl flex items-center justify-center cursor-pointer overflow-hidden">
+                            <img src="images/GaniBhabhi.jpeg" alt="Your Smile" class="w-full h-full object-cover opacity-60">
+                            <i class="fas fa-heart text-white text-3xl absolute z-10"></i>
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1 text-xs">
+                                Enjoying a beautiful day by the sea
+                            </div>
                         </div>
                         <div class="card-back bg-white rounded-xl border-2 border-pink-200 flex items-center justify-center p-4 cursor-pointer">
                             <p class="text-center text-sm font-medium text-gray-700">Your beautiful smile lights up my world</p>
@@ -121,79 +149,101 @@
                     </div>
                 </div>
                 
-                <div class="reveal-card h-32" onclick="flipCard(this)">
+                <div class="reveal-card h-40 md:h-48" onclick="flipCard(this)">
                     <div class="card-flip h-full relative">
-                        <div class="card-front bg-gradient-to-br from-blue-400 to-indigo-500 rounded-xl flex items-center justify-center cursor-pointer">
-                            <i class="fas fa-laugh text-white text-3xl"></i>
-                        </div>
-                        <div class="card-back bg-white rounded-xl border-2 border-blue-200 flex items-center justify-center p-4 cursor-pointer">
-                            <p class="text-center text-sm font-medium text-gray-700">You make me laugh even on my worst days</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="reveal-card h-32" onclick="flipCard(this)">
-                    <div class="card-flip h-full relative">
-                        <div class="card-front bg-gradient-to-br from-green-400 to-teal-500 rounded-xl flex items-center justify-center cursor-pointer">
-                            <i class="fas fa-home text-white text-3xl"></i>
-                        </div>
-                        <div class="card-back bg-white rounded-xl border-2 border-green-200 flex items-center justify-center p-4 cursor-pointer">
-                            <p class="text-center text-sm font-medium text-gray-700">You make every house feel like home</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="reveal-card h-32" onclick="flipCard(this)">
-                    <div class="card-flip h-full relative">
-                        <div class="card-front bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center cursor-pointer">
-                            <i class="fas fa-sun text-white text-3xl"></i>
-                        </div>
-                        <div class="card-back bg-white rounded-xl border-2 border-yellow-200 flex items-center justify-center p-4 cursor-pointer">
-                            <p class="text-center text-sm font-medium text-gray-700">You're my sunshine on cloudy days</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="reveal-card h-32" onclick="flipCard(this)">
-                    <div class="card-flip h-full relative">
-                        <div class="card-front bg-gradient-to-br from-red-400 to-pink-500 rounded-xl flex items-center justify-center cursor-pointer">
-                            <i class="fas fa-puzzle-piece text-white text-3xl"></i>
-                        </div>
-                        <div class="card-back bg-white rounded-xl border-2 border-red-200 flex items-center justify-center p-4 cursor-pointer">
-                            <p class="text-center text-sm font-medium text-gray-700">You complete me in every way</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="reveal-card h-32" onclick="flipCard(this)">
-                    <div class="card-flip h-full relative">
-                        <div class="card-front bg-gradient-to-br from-indigo-400 to-purple-500 rounded-xl flex items-center justify-center cursor-pointer">
-                            <i class="fas fa-star text-white text-3xl"></i>
-                        </div>
-                        <div class="card-back bg-white rounded-xl border-2 border-indigo-200 flex items-center justify-center p-4 cursor-pointer">
-                            <p class="text-center text-sm font-medium text-gray-700">You believe in my dreams</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="reveal-card h-32" onclick="flipCard(this)">
-                    <div class="card-flip h-full relative">
-                        <div class="card-front bg-gradient-to-br from-teal-400 to-blue-500 rounded-xl flex items-center justify-center cursor-pointer">
-                            <i class="fas fa-hands-helping text-white text-3xl"></i>
-                        </div>
-                        <div class="card-back bg-white rounded-xl border-2 border-teal-200 flex items-center justify-center p-4 cursor-pointer">
-                            <p class="text-center text-sm font-medium text-gray-700">Your kindness inspires me daily</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="reveal-card h-32" onclick="flipCard(this)">
-                    <div class="card-flip h-full relative">
-                        <div class="card-front bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl flex items-center justify-center cursor-pointer">
-                            <i class="fas fa-infinity text-white text-3xl"></i>
+                        <div class="card-front bg-gradient-to-br from-purple-400 to-indigo-500 rounded-xl flex items-center justify-center cursor-pointer overflow-hidden">
+                            <img src="images/bhabhi_old.jpeg" alt="Your Kindness" class="w-full h-full object-cover opacity-60">
+                            <i class="fas fa-star text-white text-3xl absolute z-10"></i>
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1 text-xs">
+                                That timeless smile!
+                            </div>
                         </div>
                         <div class="card-back bg-white rounded-xl border-2 border-purple-200 flex items-center justify-center p-4 cursor-pointer">
-                            <p class="text-center text-sm font-medium text-gray-700">My love for you is infinite</p>
+                            <p class="text-center text-sm font-medium text-gray-700">Your kindness to everyone you meet</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-40 md:h-48" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-blue-400 to-cyan-500 rounded-xl flex items-center justify-center cursor-pointer overflow-hidden">
+                            <img src="images/Bhai_bhabhi_old.jpeg" alt="Your Laugh" class="w-full h-full object-cover opacity-60">
+                            <i class="fas fa-laugh text-white text-3xl absolute z-10"></i>
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1 text-xs">
+                                A moment frozen in time
+                            </div>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-blue-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">The way you laugh at my jokes</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-40 md:h-48" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-green-400 to-emerald-500 rounded-xl flex items-center justify-center cursor-pointer overflow-hidden">
+                            <img src="images/bhai_bhabhi_old_2.jpeg" alt="Your Support" class="w-full h-full object-cover opacity-60">
+                            <i class="fas fa-hand-holding-heart text-white text-3xl absolute z-10"></i>
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1 text-xs">
+                                A precious family moment
+                            </div>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-green-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">Your unwavering support in tough times</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-40 md:h-48" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-yellow-400 to-amber-500 rounded-xl flex items-center justify-center cursor-pointer overflow-hidden">
+                            <img src="images/GaniBhai.jpeg" alt="Your Wisdom" class="w-full h-full object-cover opacity-60">
+                            <i class="fas fa-brain text-white text-3xl absolute z-10"></i>
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1 text-xs">
+                                A cool moment in the snow
+                            </div>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-yellow-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">Your intelligence and wisdom</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-40 md:h-48" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-red-400 to-rose-500 rounded-xl flex items-center justify-center cursor-pointer overflow-hidden">
+                            <img src="images/mom_2sons.jpeg" alt="Your Cooking" class="w-full h-full object-cover opacity-60">
+                            <i class="fas fa-utensils text-white text-3xl absolute z-10"></i>
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-1 text-xs">
+                                A proud mother with her sons
+                            </div>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-red-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">Your amazing cooking skills</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-40 md:h-48" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-indigo-400 to-violet-500 rounded-xl flex items-center justify-center cursor-pointer overflow-hidden">
+                            <img src="images/2_sons.jpeg" alt="Your Songs" class="w-full h-full object-cover opacity-60">
+                            <i class="fas fa-music text-white text-3xl absolute z-10"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-indigo-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">The way you sing our favorite songs</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reveal-card h-40 md:h-48" onclick="flipCard(this)">
+                    <div class="card-flip h-full relative">
+                        <div class="card-front bg-gradient-to-br from-teal-400 to-cyan-500 rounded-xl flex items-center justify-center cursor-pointer overflow-hidden">
+                            <img src="images/family_photo_old_2.jpeg" alt="Your Love" class="w-full h-full object-cover opacity-60">
+                            <i class="fas fa-infinity text-white text-3xl absolute z-10"></i>
+                        </div>
+                        <div class="card-back bg-white rounded-xl border-2 border-teal-200 flex items-center justify-center p-4 cursor-pointer">
+                            <p class="text-center text-sm font-medium text-gray-700">The endless love you give every day</p>
                         </div>
                     </div>
                 </div>
@@ -211,20 +261,34 @@
                         <h2 class="font-script text-5xl md:text-6xl text-gray-800">A Letter to My Love</h2>
                     </div>
                     
-                    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
-                        <p class="text-xl mb-6 font-script">My Dearest Wife,</p>
+                    <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed telugu-text">
+                        <p class="text-xl mb-6 font-script">నా ప్రాణ ప్రియమైన భార్య,</p>
                         
-                        <p class="mb-6">Every morning I wake up next to you, I'm reminded of how blessed I am. You are not just my wife, you are my best friend, my confidant, my partner in all of life's adventures, and the love of my life.</p>
+                        <p class="mb-6">ఆస్ట్రేలియా నుండి ఈ లేఖ రాస్తున్నాను. ఇక్కడ ఉన్నా నా మనసు మాత్రం నీతోనే, మన పిల్లలతోనే, మన ఇంట్లోనే ఉంది. ఈ దూరం నా గుండెను చీల్చేస్తోంది. నిన్ను చూడకుండా ఉండటం అంటే ఒక రోజు సూర్యుడిని చూడకుండా ఉన్నట్లే. నీ నవ్వు, నీ కళ్ళు, నీ స్పర్శ కోసం నా గుండె రోజూ పరితపిస్తోంది.</p>
                         
-                        <p class="mb-6">Through all the seasons of our marriage, you have been my constant. In joy, you celebrate with me. In sorrow, you comfort me. In uncertainty, you believe in us. Your love has been the foundation upon which we've built this beautiful life together.</p>
+                        <p class="mb-6">రాత్రిళ్ళు నిద్రలేని క్షణాల్లో, నేను మన పాత ఫోటోలు చూస్తూ కన్నీరు కార్చుతుంటాను. నీ ఫోటోతో మాట్లాడుతుంటాను. నీ గొంతు వినాలని, నీ చేతిని పట్టుకోవాలని, నీ ఒడిలో తలపెట్టి నిద్రపోవాలని ఎంతగానో కోరుకుంటుంటాను. ఎన్ని వేల కిలోమీటర్ల దూరంలో ఉన్నా, నా ప్రతి శ్వాసలో నువ్వే ఉన్నావు.</p>
                         
-                        <p class="mb-6">Thank you for choosing to love me every single day. Thank you for your patience, your grace, your laughter, and your unwavering support. Thank you for making our house a home and for being the most incredible mother to our family.</p>
+                        <p class="mb-6">నువ్వు లేని ఈ జీవితం ఎంత శూన్యంగా ఉందో చెప్పలేను. ఇక్కడ అందరూ నవ్వుతూ ఉన్నా, నేను మాత్రం లోపల ఏడుస్తూనే ఉంటాను. నీ వంట రుచి, నీ సువాసన, నీ సాన్నిహిత్యం కోసం నా ఆత్మ అల్లాడిపోతుంది. నీ చేతి వంట తినాలని, నీతో కలిసి టీవీ చూడాలని, నీతో కలిసి నవ్వాలని, నీతో కలిసి ఏడవాలని ఉంది.</p>
                         
-                        <p class="mb-6">As we celebrate another year of marriage, I want you to know that my love for you has only grown stronger. You are more beautiful to me today than the day I first met you, and I fall in love with you all over again with each passing day.</p>
+                        <p class="mb-6">మన పిల్లల గురించి ఆలోచిస్తుంటే నా కళ్ళల్లో నీళ్ళు తిరుగుతాయి. వాళ్ళ నవ్వులు, వాళ్ళ అల్లరి, వాళ్ళ ప్రేమ... ఇవన్నీ నాకు దూరమయ్యాయి. వాళ్ళు పెరుగుతున్న ప్రతి క్షణాన్ని నేను చూడలేకపోతున్నాను. వాళ్ళకి నాన్నగా దగ్గరుండాలని ఉన్నా, ఈ దూరం నన్ను బాధిస్తోంది. కానీ మన కుటుంబం కోసమే ఈ త్యాగం చేస్తున్నాను.</p>
                         
-                        <p class="mb-6 font-script text-xl">Here's to many more years of laughter, adventures, quiet moments, and endless love.</p>
+                        <p class="mb-6">నా ప్రాణమా, నువ్వు నా బలం. నువ్వు లేకపోతే నేను లేను. నీ ప్రేమే నన్ను ప్రతిరోజూ బతికిస్తోంది. నీ ఫోన్ కాల్ కోసం ఎదురుచూస్తూ ఉంటాను. నీ వాయిస్ మెసేజ్ విన్నప్పుడు నా కళ్ళల్లో నీళ్ళు తిరుగుతాయి. నీ నవ్వు విన్నప్పుడు నా గుండె ఆగిపోతుంది.</p>
                         
-                        <p class="text-xl font-script">Forever yours,<br>Your Loving Husband</p>
+                        <p class="mb-6">త్వరలోనే మనం కలుస్తాం. నిన్ను గట్టిగా కౌగిలించుకుని ఇక వదలను. మన వివాహ వార్షికోత్సవం నాడు నీ కళ్ళల్లోకి చూసి, నా ప్రేమను మళ్ళీ చెప్పాలని ఉంది. నీ చేతిని నా చేతిలో పెట్టుకుని, నీతో కలిసి నడవాలని ఉంది. నీతో కలిసి ముసలివాడినై, మన మనవళ్ళతో ఆడుకోవాలని ఉంది.</p>
+                        
+                        <p class="mb-6">నీ రాకకోసం ఎదురుచూస్తూ...<br>నీ ప్రాణం</p>
+                        
+                        <div class="mt-8 text-sm text-gray-500">
+                            <p class="italic">English Translation:</p>
+                            <p>My Beloved Wife,</p>
+                            <p>I write this letter from Australia. Though I am here, my heart remains with you, our children, and our home. This distance tears my heart apart. Being without seeing you is like going a day without seeing the sun. My heart aches daily for your smile, your eyes, your touch.</p>
+                            <p>During sleepless nights, I look at our old photographs and shed tears. I talk to your photo. I long to hear your voice, to hold your hand, to rest my head in your lap and sleep. Though thousands of kilometers away, you are in my every breath.</p>
+                            <p>I cannot express how empty this life is without you. While everyone here laughs, I weep inside. My soul yearns for the taste of your cooking, your fragrance, your presence. I want to eat food cooked by your hands, watch TV with you, laugh with you, cry with you.</p>
+                            <p>Thinking about our children brings tears to my eyes. Their laughter, their mischief, their love... all of these are now distant from me. I'm missing every moment as they grow. Though I want to be there as their father, this distance pains me. But I'm making this sacrifice for our family.</p>
+                            <p>My darling, you are my strength. Without you, I am nothing. Your love keeps me alive each day. I wait for your phone call. When I hear your voice message, tears well up in my eyes. When I hear your laughter, my heart stops.</p>
+                            <p>We will meet soon. I will hold you tight and never let go. On our anniversary, I want to look into your eyes and express my love again. I want to hold your hand in mine and walk with you. I want to grow old with you and play with our grandchildren.</p>
+                            <p>Waiting for your arrival...<br>Your Life</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -335,6 +399,134 @@
         </div>
     </section>
     
+    <!-- Photo Gallery Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <h2 class="font-script text-4xl md:text-6xl text-center text-gray-800 mb-6">
+                <i class="fas fa-images text-blue-500 mr-4"></i>
+                Our Beautiful Memories
+            </h2>
+            <p class="text-center text-gray-600 mb-12 text-lg">A lifetime of love captured in moments</p>
+            
+            <div class="photo-gallery max-w-6xl mx-auto">
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <!-- Family Photos -->
+                    <div class="gallery-item" onclick="openModal('images/family_photo_old_1.jpeg')">
+                        <div class="relative group">
+                            <img src="images/family_photo_old_1.jpeg" alt="Family Photo" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                Sun, sand, and our beautiful family. A day to remember.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('images/family_photo_old_2.jpeg')">
+                        <div class="relative group">
+                            <img src="images/family_photo_old_2.jpeg" alt="Family Photo" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                Back when the boys were little. A treasured family throwback.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('images/Family_photo_old (14).jpeg')">
+                        <div class="relative group">
+                            <img src="images/Family_photo_old (14).jpeg" alt="Family Photo" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                Brotherly adventures! A memorable horse ride on the beach back on December 11, 2011.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Couple Photos -->
+                    <div class="gallery-item" onclick="openModal('images/Bhai_bhabhi_old.jpeg')">
+                        <div class="relative group">
+                            <img src="images/Bhai_bhabhi_old.jpeg" alt="Couple Photo" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                A beautiful memory from the beginning of our journey together.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('images/bhai_bhabhi_old_2.jpeg')">
+                        <div class="relative group">
+                            <img src="images/bhai_bhabhi_old_2.jpeg" alt="Couple Photo" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                A precious family moment from April 21, 2013. Seeking blessings together.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Individual Photos -->
+                    <div class="gallery-item" onclick="openModal('images/GaniBhai.jpeg')">
+                        <div class="relative group">
+                            <img src="images/GaniBhai.jpeg" alt="Gani Bhai" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                A cool moment from a winter adventure in the snow.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('images/GaniBhabhi.jpeg')">
+                        <div class="relative group">
+                            <img src="images/GaniBhabhi.jpeg" alt="Gani Bhabhi" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                Enjoying a beautiful day by the sea. Looking so elegant.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('images/bhabhi_old.jpeg')">
+                        <div class="relative group">
+                            <img src="images/bhabhi_old.jpeg" alt="Bhabhi" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                A beautiful throwback picture. That timeless smile!
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Children Photos -->
+                    <div class="gallery-item" onclick="openModal('images/1_son.jpeg')">
+                        <div class="relative group">
+                            <img src="images/1_son.jpeg" alt="Son" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                Posing like a little star by the sea. A cherished beach memory.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('images/2_sons.jpeg')">
+                        <div class="relative group">
+                            <img src="images/2_sons.jpeg" alt="Sons" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                Brothers in arms, then and always. A precious throwback.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('images/son.jpeg')">
+                        <div class="relative group">
+                            <img src="images/son.jpeg" alt="Son" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                A precious throwback! Look at that adorable little face.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openModal('images/mom_2sons.jpeg')">
+                        <div class="relative group">
+                            <img src="images/mom_2sons.jpeg" alt="Mom with Sons" class="w-full h-48 object-cover rounded-lg shadow-md hover:shadow-xl transition-all">
+                            <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-60 text-white p-2 text-sm rounded-b-lg opacity-0 group-hover:opacity-100 transition-opacity">
+                                A proud mother with her two handsome sons.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Quotes Section -->
     <section class="py-20 bg-gradient-to-br from-pink-50 to-red-50" id="quotes-section">
         <div class="container mx-auto px-4">
@@ -367,6 +559,16 @@
         </div>
     </section>
 
+    <!-- Image Modal -->
+    <div id="image-modal" class="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center hidden">
+        <div class="relative max-w-4xl w-full">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-white text-3xl hover:text-pink-400 transition-colors">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modal-image" src="" alt="Enlarged image" class="max-w-full max-h-[80vh] mx-auto rounded-lg">
+        </div>
+    </div>
+    
     <!-- Footer -->
     <footer class="gradient-bg text-white py-12">
         <div class="container mx-auto px-4 text-center">
